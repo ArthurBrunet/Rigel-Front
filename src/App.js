@@ -41,16 +41,16 @@ export default function App() {
                 </nav>
 
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/home">
                         <HomeScreen/>
                     </Route>
-                    <Route path="/talk">
+                    <Route exact path="/talk">
                         <ChatScreen/>
                     </Route>
-                    <Route path="/directory">
+                    <Route exact path="/directory">
                         <DirectoryScreen/>
                     </Route>
-                    <Route path="/ideabox">
+                    <Route exact path="/ideabox">
                         <IdeaBoxScreen/>
                     </Route>
                 </Switch>
