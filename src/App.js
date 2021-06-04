@@ -5,6 +5,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import './Style/Normalize.css'
 import "./Style/App.css"
 
 export default function App() {
@@ -12,33 +13,38 @@ export default function App() {
         <Router>
             <div>
                 <header>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/home">Accueil</Link>
-                            </li>
-                            <li>
-                                <Link to="/talk">Chats</Link>
-                            </li>
-                            <li>
-                                <Link to="/users">Annuaire</Link>
-                            </li>
-                            <li>
-                                <Link to="/ideabox">Boîte à idées</Link>
-                            </li>
-                        </ul>
-                    </nav>
+                    <h2>Rigel</h2>
+                    <div className={'profile'}>
+                        <p>photo ici</p>
+                        <p>icon ici</p>
+                    </div>
                 </header>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/home">Accueil</Link>
+                        </li>
+                        <li>
+                            <Link to="/talk">Chats</Link>
+                        </li>
+                        <li>
+                            <Link to="/users">Annuaire</Link>
+                        </li>
+                        <li>
+                            <Link to="/ideabox">Boîte à idées</Link>
+                        </li>
+                    </ul>
+                </nav>
 
                 <Switch>
                     <Route path="/about">
-                        <About />
+                        <About/>
                     </Route>
                     <Route path="/users">
-                        <Users />
+                        <Users/>
                     </Route>
                     <Route path="/">
-                        <Home />
+                        <Home/>
                     </Route>
                 </Switch>
             </div>

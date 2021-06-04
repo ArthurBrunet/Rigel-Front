@@ -1,9 +1,52 @@
+:root {
+    --blueOrion: rgb(3, 152, 158);
+}
+
+* {
+    font-family: "Open Sans", Sans-serif, serif;
+}
+
+header {
+    min-height: 100px;
+    max-height: 15%;
+    background: linear-gradient(rgba(3, 152, 158, 0.75), rgba(3, 152, 158, 1));
+    position: relative;
+}
+
+header h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 150px;
+}
+
+header .profile {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    border: 1px solid white;
+    height: 60%;
+    width: 150px;
+    transform: translate(0, -50%);
+    background-color: white;
+    border-radius: 10px;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: white;
 }
 
 li {
@@ -12,7 +55,7 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: var(--blueOrion);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -21,4 +64,5 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+    color: white;
 }
