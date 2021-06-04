@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 import './Style/Normalize.css'
 import "./Style/App.css"
+import {HomeScreen} from "./Template/Screen/HomeScreen";
+import {DirectoryScreen} from "./Template/Screen/DirectoryScreen";
+import {ChatScreen} from "./Template/Screen/ChatScreen";
+import {IdeaBoxScreen} from "./Template/Screen/IdeaBoxScreen";
 
 export default function App() {
     return (
@@ -28,7 +32,7 @@ export default function App() {
                             <Link to="/talk">Chats</Link>
                         </li>
                         <li>
-                            <Link to="/users">Annuaire</Link>
+                            <Link to="/directory">Annuaire</Link>
                         </li>
                         <li>
                             <Link to="/ideabox">Boîte à idées</Link>
@@ -37,29 +41,20 @@ export default function App() {
                 </nav>
 
                 <Switch>
-                    <Route path="/about">
-                        <About/>
-                    </Route>
-                    <Route path="/users">
-                        <Users/>
-                    </Route>
                     <Route path="/">
-                        <Home/>
+                        <HomeScreen/>
+                    </Route>
+                    <Route path="/talk">
+                        <ChatScreen/>
+                    </Route>
+                    <Route path="/directory">
+                        <DirectoryScreen/>
+                    </Route>
+                    <Route path="/ideabox">
+                        <IdeaBoxScreen/>
                     </Route>
                 </Switch>
             </div>
         </Router>
     );
-}
-
-function Home() {
-    return <h2>Home</h2>;
-}
-
-function About() {
-    return <h2>About</h2>;
-}
-
-function Users() {
-    return <h2>Users</h2>;
 }

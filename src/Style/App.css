@@ -9,7 +9,7 @@
 header {
     min-height: 100px;
     max-height: 15%;
-    background: linear-gradient(rgba(3, 152, 158, 0.75), rgba(3, 152, 158, 1));
+    background: linear-gradient(to left, rgba(3, 152, 158, 0.75), rgba(3, 152, 158, 1));
     position: relative;
 }
 
