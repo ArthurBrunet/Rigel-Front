@@ -11,50 +11,26 @@ import {HomeScreen} from "./Template/Screen/HomeScreen";
 import {DirectoryScreen} from "./Template/Screen/DirectoryScreen";
 import {ChatScreen} from "./Template/Screen/ChatScreen";
 import {IdeaBoxScreen} from "./Template/Screen/IdeaBoxScreen";
+import {Header} from "./Template/Component/Header";
 
 export default function App() {
     return (
         <Router>
-            <div>
-                <header>
-                    <h2>Rigel</h2>
-                    <div className={'profile'}>
-                        <p>photo ici</p>
-                        <p>icon ici</p>
-                    </div>
-                </header>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/home">Accueil</Link>
-                        </li>
-                        <li>
-                            <Link to="/talk">Chats</Link>
-                        </li>
-                        <li>
-                            <Link to="/directory">Annuaire</Link>
-                        </li>
-                        <li>
-                            <Link to="/ideabox">Boîte à idées</Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                <Switch>
-                    <Route exact path="/home">
-                        <HomeScreen/>
-                    </Route>
-                    <Route exact path="/talk">
-                        <ChatScreen/>
-                    </Route>
-                    <Route exact path="/directory">
-                        <DirectoryScreen/>
-                    </Route>
-                    <Route exact path="/ideabox">
-                        <IdeaBoxScreen/>
-                    </Route>
-                </Switch>
-            </div>
+            <Header/>
+            <Switch>
+                <Route exact path="/home">
+                    <HomeScreen/>
+                </Route>
+                <Route exact path="/talk">
+                    <ChatScreen/>
+                </Route>
+                <Route exact path="/directory">
+                    <DirectoryScreen/>
+                </Route>
+                <Route exact path="/ideabox">
+                    <IdeaBoxScreen/>
+                </Route>
+            </Switch>
         </Router>
     );
 }
