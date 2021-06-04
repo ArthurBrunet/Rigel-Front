@@ -39,6 +39,7 @@ header .profile {
 
 body {
     background-color: whitesmoke;
+    min-height: 100vh;
 }
 
 ul {
@@ -63,6 +64,34 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: rgba(3, 152, 158, 1);
     color: white;
+}
+
+.apero{
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
+    position:fixed;
+}
+
+.ideaForm{
+    width:50%;
+    text-align:center;
+    margin:2vh auto;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.input {
+    width:80%!important;
+    text-align:center!important;
+    margin:2vh auto!important;
+    margin-bottom: 5vh!important;
+}
+
+.ideaButton{
+    width:100%!important;
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
+    border-radius:0 0 15px 15px!important;
 }
