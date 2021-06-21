@@ -1,15 +1,46 @@
 import {
     Link
 } from "react-router-dom";
+import React from 'react'
+import { IconButton } from '@material-ui/core';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Avatar from '@material-ui/core/Avatar';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 export function Header() {
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
     return (
         <>
             <header>
                 <h2>Rigel</h2>
                 <div className={'profile'}>
-                    <p>photo ici</p>
-                    <p>icon ici</p>
+                    <Avatar/>
+
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                      <KeyboardArrowDownIcon/>
+                    </IconButton>
+
+                    <Menu
+                      id="simple-menu"
+                      anchorEl={anchorEl}
+                      keepMounted
+                      open={Boolean(anchorEl)}
+                      onClose={handleClose}
+                    >
+                      <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
+                      <MenuItem onClick={handleClose}>My account</MenuItem><br/>
+                      <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    </Menu>
                 </div>
             </header>
             <nav>

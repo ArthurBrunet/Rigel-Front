@@ -7,8 +7,8 @@ export function IdeaBoxScreen() {
         <>
         <div className={'ideaForm'}>
             <form className={'ideaBox'} noValidate autoComplete="off">
-                <TextField className="input" id="ideaFormName" label="Nom"/><br/>
-                <TextField className="input" id="ideaFormName" label="Rédigez votre idée"/><br/>
+                <TextField className="input" id="ideaFormTitle" label="TITRE"/><br/>
+                <TextField className="input" id="ideaFormText" label="RÉDIGEZ VOTRE IDÉE ICI"/><br/>
                 <Button className="ideaButton">Envoyer votre idée</Button>
             </form>
         </div>
