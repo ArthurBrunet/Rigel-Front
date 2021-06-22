@@ -7,7 +7,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-export default function MediaCard() {
+export default function CustomCard() {
 
   return (
     <Card className={'card'}>

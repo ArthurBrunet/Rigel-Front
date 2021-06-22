@@ -1,12 +1,12 @@
 import Apero from '../Component/apero';
-import MediaCard from '../Component/Card';
+import CustomCard from '../Component/CustomCard';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 export function DirectoryScreen() {
     return (
         <>
-        <div>
+        <div className={'filterList'}>
         <Autocomplete
         className={'list'}
         multiple
@@ -45,19 +45,19 @@ export function DirectoryScreen() {
         </div>
 
         <div class="cards">
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
-          <MediaCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
+          <CustomCard/>
         </div>
         <Apero/>
         </>

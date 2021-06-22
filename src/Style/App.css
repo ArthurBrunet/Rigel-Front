@@ -39,9 +39,13 @@ header .profile {
 html, body {
     background-color: whitesmoke;
     margin: 0;
-    height: 100%;
-    width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
+}
 
+div#root {
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 #root {
@@ -69,24 +73,40 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: rgba(3, 152, 158, 1);
     color: white;
 }
 
-.apero{
-    background-color: rgba(3, 152, 158, 1)!important;
-    color:white!important;
+.apero-div {
     position:fixed;
+    bottom: 25px;
+    right: 25px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    z-index: 10;
+    border-radius: 100%;
 }
 
-.ideaForm{
+.apero {
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
+}
+
+.ideaForm {
     width:50%;
     text-align:center;
-    margin:2vh auto;
+    margin:50px auto;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px 1px #333333;
+    overflow: hidden;
+}
+
+.ideaButton{
+    width:100%;
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
 }
 
 .input {
@@ -96,13 +116,6 @@ li a:hover {
     margin-bottom: 5vh!important;
 }
 
-.ideaButton{
-    width:100%!important;
-    background-color: rgba(3, 152, 158, 1)!important;
-    color:white!important;
-    border-radius:0 0 15px 15px!important;
-}
-
 .list{
     display: inline-block!important;
     width:20%;
@@ -110,29 +123,112 @@ li a:hover {
     color:rgba(3, 152, 158, 1)!important;
 }
 
-.cards{
+.filterList{
     width: 90vw;
-    margin:0 auto;
+    margin:20px auto;
+    align-items: center;
+    text-align: center;
 }
 
-.card{
+.pageTitle {
+    color: var(--blueOrion);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 100px auto 0 auto;
+    font-size: 30px;
+}
+
+.cards {
+    width: 90vw;
+    margin:0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
     max-width: 350px;
     margin: 1vh 1vw;
     display: inline-block;
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.5) !important;
 }
 
-.avatar{
+.cardPost {
+    max-width: 500px;
+    width: 100%;
+    margin: 1vh 1vw;
+    display: inline-block;
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.5) !important;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardPostHeader {
+    height: 80px;
+    background-color: var(--blueOrion);
+    color:white;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.cardPostHeader img {
+    width: 60px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 100%;
+    float: left;
+}
+
+.cardPostHeader h2 {
+    position: absolute;
+    top: 0;
+    left: 80px;
+}
+
+
+.cardPostHeader .creationDate {
+    font-size: 12px;
+    position: absolute;
+    top: 40px;
+    left: 80px;
+}
+
+.cardContent {
+    position: relative;
+    height: 250px;
+}
+
+.cardContent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 40%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
+}
+
+.cardContent p {
+    float: right;
+    max-width: 60%;
+    margin: 10px auto;
+}
+
+.avatar {
     display: inline-block;
 }
-
-
 
 /*Login */
 
 .particlesBackground{
     margin: 0;
     height: 100%;
-
 }
 
 #tsparticles {

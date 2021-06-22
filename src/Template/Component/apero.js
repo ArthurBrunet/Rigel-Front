@@ -3,7 +3,10 @@ import LocalBarIcon from '@material-ui/icons/LocalBar';
 
 export default function Apero() {
     return (
-        <IconButton className={'apero'}>
-            <LocalBarIcon />
-        </IconButton>);
+        <div className={'apero-div'}>
+            <IconButton className={'apero'}>
+                <LocalBarIcon />
+            </IconButton>
+        </div>
+    )
 }
