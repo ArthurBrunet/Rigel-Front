@@ -36,8 +36,9 @@ header .profile {
     border-radius: 10px;
 }
 
-body {
+html, body {
     background-color: whitesmoke;
+    margin: 0;
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -47,6 +48,11 @@ div#root {
     min-width: 100vw;
 }
 
+#root {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -216,4 +222,61 @@ li a:hover {
 
 .avatar {
     display: inline-block;
+}
+
+/*Login */
+
+.particlesBackground{
+    margin: 0;
+    height: 100%;
+}
+
+#tsparticles {
+    margin: 0;
+    height: 100%;
+    background-color: #03989E;
+}
+.tsparticles-canvas-el {
+    margin: 0;
+    height: 100%;
+}
+.formLogin{
+    position: absolute; /* postulat de départ */
+    top: 50%; 
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    box-sizing: content-box;
+}
+.MuiFormLabel-root {
+    color: #fff !important;
+}
+.MuiInput-underline:before {
+    border-bottom: 1px solid #fff !important;
+
+}
+
+@media screen and (max-device-width: 500px) {
+ #standard-basic-label {
+        font-size: 0.9em;
+    }
+}
+
+@media screen 
+ and (max-width: 500px) { 
+#standard-basic-label{
+       font-size: 0.7em;
+    }
+#standard-password-input-label{
+    font-size: 0.7em;
+ }
+}
+
+/* Register PAGE*/ 
+
+.formRegister{
+    position: absolute; /* postulat de départ */
+    top: 50%; 
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    box-sizing: content-box;
 }
