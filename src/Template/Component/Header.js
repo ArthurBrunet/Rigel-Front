@@ -1,7 +1,7 @@
 import {
     Link
 } from "react-router-dom";
-import React from 'react'
+import React, {useState} from 'react'
 import { IconButton } from '@material-ui/core';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -9,7 +9,7 @@ import Avatar from '@material-ui/core/Avatar';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 export function Header() {
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -34,7 +34,7 @@ export function Header() {
                       id="simple-menu"
                       anchorEl={anchorEl}
                       keepMounted
-                      open={Boolean(anchorEl)}
+                      open={anchorEl}
                       onClose={handleClose}
                     >
                       <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
