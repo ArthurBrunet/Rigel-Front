@@ -40,12 +40,7 @@ html, body {
     background-color: whitesmoke;
     margin: 0;
     min-height: 100vh;
-    min-width: 100vw;
-}
-
-div#root {
-    min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100vh;
 }
 
 #root {
@@ -53,6 +48,7 @@ div#root {
     height: 100%;
     width: 100%;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -134,8 +130,17 @@ li a:hover {
     color: var(--blueOrion);
     text-transform: uppercase;
     text-align: center;
-    margin: 100px auto 0 auto;
+    margin: 0 auto 50px auto;
     font-size: 30px;
+    letter-spacing: 5px;
+    background-color: white;
+    padding: 25px;
+    width: 50%;
+    min-width: 300px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 1px 15px 15px 0 rgba(0,0,0,0.15);
+    box-sizing: border-box;
 }
 
 .cards {
@@ -247,10 +252,10 @@ li a:hover {
     transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     box-sizing: content-box;
 }
-.MuiFormLabel-root {
+.loginform-root {
     color: #fff !important;
 }
-.MuiInput-underline:before {
+.loginform-underline:before {
     border-bottom: 1px solid #fff !important;
 
 }
