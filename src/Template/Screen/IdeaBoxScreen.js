@@ -1,11 +1,12 @@
 import Apero from '../Component/apero';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Title from "../Component/Title";
 
 export function IdeaBoxScreen() {
     return (
         <>
-            <h2 className={"pageTitle"}>Boîte à idées</h2>
+            <Title title={'Boîte à idées'}/>
             <div className={'ideaForm'}>
                 <form className={'ideaBox'} noValidate autoComplete="off">
                     <TextField className="input" id="ideaFormTitle" label="TITRE"/><br/>

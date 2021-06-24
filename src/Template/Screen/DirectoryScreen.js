@@ -2,10 +2,12 @@ import Apero from '../Component/apero';
 import CustomCard from '../Component/CustomCard';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Title from "../Component/Title";
 
 export function DirectoryScreen() {
     return (
         <>
+            <Title title={'Annuaire'}/>
             <div className={'filterList'}>
                 <Autocomplete
                     className={'list'}
