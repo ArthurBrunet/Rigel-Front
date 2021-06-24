@@ -4,7 +4,7 @@ export function ChatScreen() {
     return (
     <>
         <h2>ChatScreen</h2>
-        <Apero></Apero>
+        <Apero/>
     </>
     );
 }
