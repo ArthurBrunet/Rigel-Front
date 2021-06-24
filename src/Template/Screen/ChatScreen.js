@@ -1,3 +1,11 @@
+import Apero from '../Component/apero'
+import Title from "../Component/Title";
+
 export function ChatScreen() {
-    return <h2>ChatScreen</h2>;
+    return (
+    <>
+        <Title title={'Chats'}/>
+        <Apero/>
+    </>
+    );
 }

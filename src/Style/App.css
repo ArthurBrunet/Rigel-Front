@@ -30,15 +30,23 @@ header .profile {
     top: 50%;
     right: 15px;
     border: 1px solid white;
-    height: 60%;
     width: 150px;
     transform: translate(0, -50%);
     background-color: white;
     border-radius: 10px;
 }
 
-body {
+html, body {
     background-color: whitesmoke;
+    margin: 0;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+#root {
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 
 ul {
@@ -61,8 +69,219 @@ li a {
     text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: rgba(3, 152, 158, 1);
     color: white;
+}
+
+.apero-div {
+    position:fixed;
+    bottom: 25px;
+    right: 25px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    z-index: 10;
+    border-radius: 100%;
+}
+
+.apero {
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
+}
+
+.ideaForm {
+    width:50%;
+    text-align:center;
+    margin:50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px 1px #333333;
+    overflow: hidden;
+}
+
+.ideaButton{
+    width:100%;
+    background-color: rgba(3, 152, 158, 1)!important;
+    color:white!important;
+}
+
+.input {
+    width:80%!important;
+    text-align:center!important;
+    margin:2vh auto!important;
+    margin-bottom: 5vh!important;
+}
+
+.list{
+    display: inline-block!important;
+    width:20%;
+    margin-left:5%;
+    color:rgba(3, 152, 158, 1)!important;
+}
+
+.filterList{
+    width: 90vw;
+    margin:20px auto;
+    align-items: center;
+    text-align: center;
+}
+
+.pageTitle {
+    color: var(--blueOrion);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 50px auto;
+    font-size: 30px;
+    letter-spacing: 5px;
+    background-color: white;
+    padding: 25px;
+    width: 50%;
+    min-width: 300px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 1px 15px 15px 0 rgba(0,0,0,0.15);
+    box-sizing: border-box;
+}
+
+.cards {
+    width: 90vw;
+    margin:0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+.card {
+    max-width: 350px;
+    margin: 1vh 1vw;
+    display: inline-block;
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.5) !important;
+}
+
+.cardPost {
+    max-width: 500px;
+    width: 100%;
+    margin: 1vh 1vw;
+    display: inline-block;
+    box-shadow: 2px 2px 15px 0 rgba(0,0,0,0.5) !important;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.cardPostHeader {
+    height: 80px;
+    background-color: var(--blueOrion);
+    color:white;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.cardPostHeader img {
+    width: 60px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 100%;
+    float: left;
+}
+
+.cardPostHeader h2 {
+    position: absolute;
+    top: 0;
+    left: 80px;
+}
+
+
+.cardPostHeader .creationDate {
+    font-size: 12px;
+    position: absolute;
+    top: 40px;
+    left: 80px;
+}
+
+.cardContent {
+    position: relative;
+    height: 250px;
+}
+
+.cardContent img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    max-width: 40%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
+}
+
+.cardContent p {
+    float: right;
+    max-width: 60%;
+    margin: 10px auto;
+}
+
+.avatar {
+    display: inline-block;
+}
+
+/*Login */
+
+.particlesBackground{
+    margin: 0;
+    height: 100%;
+}
+
+#tsparticles {
+    margin: 0;
+    height: 100%;
+    background-color: #03989E;
+}
+.tsparticles-canvas-el {
+    margin: 0;
+    height: 100%;
+}
+.formLogin{
+    position: absolute; /* postulat de départ */
+    top: 50%; 
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    box-sizing: content-box;
+}
+.loginform-root {
+    color: #fff !important;
+}
+.loginform-underline:before {
+    border-bottom: 1px solid #fff !important;
+
+}
+
+@media screen and (max-device-width: 500px) {
+ #standard-basic-label {
+        font-size: 0.9em;
+    }
+}
+
+@media screen 
+ and (max-width: 500px) { 
+#standard-basic-label{
+       font-size: 0.7em;
+    }
+#standard-password-input-label{
+    font-size: 0.7em;
+ }
+}
+
+/* Register PAGE*/ 
+
+.formRegister{
+    position: absolute; /* postulat de départ */
+    top: 50%; 
+    left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    box-sizing: content-box;
 }

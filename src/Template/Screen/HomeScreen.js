@@ -1,3 +1,27 @@
+import Apero from '../Component/apero'
+import CustomPostCard from "../Component/CustomPostCard";
+import Title from "../Component/Title";
+
 export function HomeScreen() {
-    return <h2>HomeScreen</h2>;
+    return (
+        <>
+            <Apero/>
+            <Title title={'Accueil'}/>
+            <div className="cards">
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+                <CustomPostCard/>
+            </div>
+        </>
+        );
 }
