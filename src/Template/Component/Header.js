@@ -7,6 +7,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Avatar from '@material-ui/core/Avatar';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import paul from '../../Assets/paul.jpg';
 
 export function Header() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +25,7 @@ export function Header() {
             <header>
                 <h2>Rigel</h2>
                 <div className={'profile'}>
-                    <Avatar/>
+                    <Avatar src={paul}/>
 
                     <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                       <KeyboardArrowDownIcon/>
