@@ -22,7 +22,7 @@ export function Header() {
     return (
         <>
             <header>
-                <h2>Rigel</h2>
+                <h2>Sirius</h2>
                 <div className={'profile'}>
                     <Avatar/>
 
