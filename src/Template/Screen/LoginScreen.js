@@ -27,12 +27,12 @@ export function LoginScreen() {
     const classes = useStyles();
     return (
         <>
-            <ParticlesBackground/>
+            <ParticlesBackground />
 
             <div className="formLogin">
                 <form className={classes.root} noValidate autoComplete="off">
-                    <TextField className={classes.textField} id="standard-basic" label="EMAIL"/>
-                    <TextField className={classes.textField} id="standard-password-input" label="MOT DE PASSE"
+                    <TextField className={classes.textField} id="loginformRoot" label="EMAIL"/>
+                    <TextField className={classes.textField} id="loginformRoot" label="MOT DE PASSE"
                                type="password" autoComplete="current-password"/>
                     <div className={classes.button}>
                         <Button className={classes.buttonProps} variant="outlined">Connexion</Button>

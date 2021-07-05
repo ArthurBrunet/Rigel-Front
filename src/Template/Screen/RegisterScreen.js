@@ -36,22 +36,22 @@ export function RegisterScreen() {
 
     return (
         <>
-            <ParticlesBackground/>
+            <ParticlesBackground />
             <div className={classes.root}>
                 <form noValidate autoComplete="off">
 
                     <Grid container spacing={3}>
                         <Grid item xs={6}>
-                            <TextField className={classes.textField} id="standard-basic" label="NOM"/>
+                            <TextField className={classes.textField} id="loginformRoot" label="NOM"/>
                         </Grid>
                         <Grid item xs={6}>
-                            <TextField className={classes.textField} id="standard-basic" label="PRÉNOM"/>
+                            <TextField className={classes.textField} id="loginformRoot" label="PRÉNOM"/>
                         </Grid>
                         <Grid item xs={6}>
-                            <TextField className={classes.textField} id="standard-basic" label="MOT DE PASSE"/>
+                            <TextField className={classes.textField} id="loginformRoot" label="MOT DE PASSE"/>
                         </Grid>
                         <Grid item xs={6}>
-                            <TextField className={classes.textField} id="standard-basic"
+                            <TextField className={classes.textField} id="loginformRoot"
                                        label="CONFIRMER LE MOT DE PASSE"/>
                         </Grid>
                         <div className={classes.button}>
