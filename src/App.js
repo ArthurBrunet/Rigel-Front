@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./Style/Normalize.css";
 import "./Style/App.css";
@@ -16,9 +16,20 @@ export default function App() {
   let auth = useAuth();
   console.log("LE TEST auth.state.isLoggedIn");
   console.log(auth.state.isLoggedIn);
+  const [displayHeader, setDisplayHeader] = useState(false);
+  const pathname = window.location.pathname;
+  console.log(displayHeader);
+
+  useEffect(() => {
+    if (pathname !== '/login' && pathname !== '/register') {
+      setDisplayHeader(true);
+    }
+  }, []);
   return (
     <Router>
-      <Header />
+      {
+        displayHeader && (<Header />)
+      }
       <Switch>
         <Route exact path="/">
           <HomeScreen />
