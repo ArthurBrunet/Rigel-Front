@@ -9,13 +9,9 @@ import { ChatScreen } from "./Template/Screen/ChatScreen";
 import { IdeaBoxScreen } from "./Template/Screen/IdeaBoxScreen";
 import { Header } from "./Template/Component/Header";
 import { RegisterScreen } from "./Template/Screen/RegisterScreen";
-import {useAuth} from "./Store/Auth/auth";
 
 export default function App() {
   // const [isLogged, setIsLogged] = useState(false)
-  let auth = useAuth();
-  console.log("LE TEST auth.state.isLoggedIn");
-  console.log(auth.state.isLoggedIn);
   const [displayHeader, setDisplayHeader] = useState(false);
   const pathname = window.location.pathname;
   console.log(displayHeader);
@@ -25,6 +21,7 @@ export default function App() {
       setDisplayHeader(true);
     }
   }, []);
+
   return (
     <Router>
       {
