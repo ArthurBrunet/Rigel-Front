@@ -49,6 +49,9 @@ export function Header() {
                         <Link to="/">Accueil</Link>
                     </li>
                     <li>
+                        <Link to="/post">Posts</Link>
+                    </li>
+                    <li>
                         <Link to="/talk">Chats</Link>
                     </li>
                     <li>

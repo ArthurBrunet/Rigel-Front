@@ -89,6 +89,36 @@ li a:hover {
     color: white !important;
 }
 
+.homeBox {
+    box-sizing: border-box;
+    padding: 30px 0 50px 0;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.homeBox h2 {
+    margin: 20px auto;
+    width: 30%;
+    border-bottom: 3px solid var(--blueOrion);
+    border-radius: 2px;
+}
+
+.homeBox p {
+   line-height: 25px;
+}
+
+.homeBox p span {
+    color: var(--blueOrion);
+    font-weight: bold;
+}
+
+.stickOrion {
+    max-width: 200px;
+    width: 15%;
+    padding: 10px;
+}
+
 .ideaForm {
     width: 50%;
     text-align: center;

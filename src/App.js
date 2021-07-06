@@ -7,6 +7,7 @@ import { LoginScreen } from "./Template/Screen/LoginScreen";
 import { DirectoryScreen } from "./Template/Screen/DirectoryScreen";
 import { ChatScreen } from "./Template/Screen/ChatScreen";
 import { IdeaBoxScreen } from "./Template/Screen/IdeaBoxScreen";
+import { PostScreen } from "./Template/Screen/PostScreen";
 import { Header } from "./Template/Component/Header";
 import { RegisterScreen } from "./Template/Screen/RegisterScreen";
 
@@ -31,7 +32,9 @@ export default function App() {
         <Route exact path="/">
           <HomeScreen />
         </Route>
-
+        <Route exact path="/post">
+          <PostScreen />
+        </Route>
         <Route exact path="/talk">
           <ChatScreen />
         </Route>
