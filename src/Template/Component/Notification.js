@@ -1,14 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Badge from "@material-ui/core/Badge";
-import MailIcon from "@material-ui/icons/Mail";
-import { Typography } from "@material-ui/core";
 import { Box } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   notification: {
     background: "#ffffff",
-  
     borderRadius: "10px",
     padding: "1rem 2rem",
     marginBottom: "1rem",
@@ -16,11 +13,11 @@ const useStyles = makeStyles((theme) => ({
   notificationTitle: {
     marginBottom: "1rem",
     fontWeight: "bold",
-    fontSize:'1.2em'
+    fontSize: "1.2em",
   },
   badge: {
     background: "yellow",
-    left:"100%",
+    left: "100%",
     borderRadius: "10px",
   },
 }));
