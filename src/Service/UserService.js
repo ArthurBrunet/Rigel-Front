@@ -1,31 +1,34 @@
 import * as c from '../Config/const';
 import axios from "axios";
 
-export async function login(data){
-    try{
+export async function login(data) {
+    try {
+        console.log('request login');
         const options = {
             headers: {
-                "Content-Type": "application/json;charset=UTF-8"
+                "Content-Type": "application/json;charset=UTF-8",
+                'Access-Control-Allow-Origin': '*'
             }
         };
         let res = await axios.post(c.LOGIN, data, options);
 
         return res.data;
-    }catch (e) {
+    } catch (e) {
         throw handler(e);
     }
 }
 
-export async function information(email){
-    try{
+export async function information(email) {
+    try {
         const options = {
             headers: {
-                "Content-Type": "application/json;charset=UTF-8"
+                "Content-Type": "application/json;charset=UTF-8",
+                'Access-Control-Allow-Origin': '*',
             }
         };
-        let res = await axios.get(c.INFORMATION_PROFILE(email),options);
+        let res = await axios.get(c.INFORMATION_PROFILE(email), options);
         return res.data;
-    }catch (e) {
+    } catch (e) {
         throw handler(e);
     }
 }

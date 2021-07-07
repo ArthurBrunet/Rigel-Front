@@ -8,7 +8,7 @@ import * as api from '../../Service/UserService';
 // CONTEXT ===================================
 const AuthContext = React.createContext();
 
-function AuthProvider(props) {
+export const AuthProvider = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState || {});
 
     const handleLogin = async (data) => {
@@ -46,4 +46,3 @@ function AuthProvider(props) {
 
 const useAuth = () => useContext(AuthContext);
 export { AuthContext, useAuth }
-export default AuthProvider;
