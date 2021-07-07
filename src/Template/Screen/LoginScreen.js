@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import {makeStyles} from '@material-ui/core/styles';
 import {ParticlesBackground} from './ParticlesBackground';
@@ -31,9 +31,13 @@ export function LoginScreen() {
 
             <div className="formLogin">
                 <form className={classes.root} noValidate autoComplete="off">
-                    <TextField className={classes.textField} id="standard-basic" label="EMAIL"/>
+                    <TextField className={classes.textField} id="standard-basic" label="EMAIL" onChange={(result) => {
+                        setUsername(result.target.value)
+                    }}/>
                     <TextField className={classes.textField} id="standard-password-input" label="MOT DE PASSE"
-                               type="password" autoComplete="current-password"/>
+                               type="password" autoComplete="current-password" onChange={(result) => {
+                        setPassword(result.target.value)
+                    }}/>
                     <div className={classes.button}>
                         <Button className={classes.buttonProps} variant="outlined">Connexion</Button>
                     </div>
