@@ -9,6 +9,7 @@ import { ChatScreen } from "./Template/Screen/ChatScreen";
 import { IdeaBoxScreen } from "./Template/Screen/IdeaBoxScreen";
 import { Header } from "./Template/Component/Header";
 import { RegisterScreen } from "./Template/Screen/RegisterScreen";
+import { ProfilScreen } from "./Template/Screen/ProfilScreen";
 
 export default function App() {
   // const [isLogged, setIsLogged] = useState(false)
@@ -31,7 +32,9 @@ export default function App() {
         <Route exact path="/">
           <HomeScreen />
         </Route>
-
+        <Route exact path="/profil">
+          <ProfilScreen />
+        </Route>
         <Route exact path="/talk">
           <ChatScreen />
         </Route>

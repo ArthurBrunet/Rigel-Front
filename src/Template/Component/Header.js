@@ -7,6 +7,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Avatar from '@material-ui/core/Avatar';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import { useHistory } from "react-router-dom";
 
 export function Header() {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -18,7 +19,11 @@ export function Header() {
     const handleClose = () => {
       setAnchorEl(null);
     };
-
+    const history = useHistory();
+  
+    const handleRoute = () =>{ 
+      history.push("/profil");
+    }
     return (
         <>
             <header>
@@ -37,7 +42,7 @@ export function Header() {
                       open={anchorEl}
                       onClose={handleClose}
                     >
-                      <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
+                      <MenuItem onClick={() => { history.push('/profil') }}>Profile</MenuItem><br/>
                       <MenuItem onClick={handleClose}>My account</MenuItem><br/>
                       <MenuItem onClick={handleClose}>Logout</MenuItem>
                     </Menu>
