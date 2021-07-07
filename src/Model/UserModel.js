@@ -1,4 +1,3 @@
-import Competence from "./CompetenceModel";
 import Entreprise from "./EntrepriseModel";
 
 export default class User {
@@ -12,7 +11,7 @@ export default class User {
     token: String
     role: String
     entreprise: Entreprise
-    competence: Competence
+    competence: String
     isEnable: Boolean
     isVisible: Boolean
     createdAt: Date
