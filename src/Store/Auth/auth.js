@@ -3,7 +3,7 @@ import axios from 'axios';
 
 //IMPORT REDUCER, INITIAL STATE AND ACTION TYPES
 import reducer, {initialState, LOGGED_IN, LOGGED_OUT} from '../reducer/authReducer';
-import * as api from '../../service/UserService';
+import * as api from '../../Service/UserService';
 
 // CONTEXT ===================================
 const AuthContext = React.createContext();

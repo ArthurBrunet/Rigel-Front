@@ -15,20 +15,6 @@ export async function login(data){
         throw handler(e);
     }
 }
-export async function login(data){
-    try{
-        const options = {
-            headers: {
-                "Content-Type": "application/json;charset=UTF-8"
-            }
-        };
-        let res = await axios.post(c.LOGIN, data, options);
-
-        return res.data;
-    }catch (e) {
-        throw handler(e);
-    }
-}
 
 export async function information(email){
     try{
