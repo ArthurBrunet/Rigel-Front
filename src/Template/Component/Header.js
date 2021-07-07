@@ -23,7 +23,7 @@ export function Header() {
     return (
         <>
             <header>
-                <h2>Rigel</h2>
+                <h2>Sirius</h2>
                 <div className={'profile'}>
                     <Avatar src={paul}/>
 
@@ -48,6 +48,9 @@ export function Header() {
                 <ul>
                     <li>
                         <Link to="/">Accueil</Link>
+                    </li>
+                    <li>
+                        <Link to="/post">Posts</Link>
                     </li>
                     <li>
                         <Link to="/talk">Chats</Link>

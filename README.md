@@ -6,9 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm install --global yarn`
+To install yarn via npm.
 
-Runs the app in the development mode.\
+### `yarn install`
+To install all the dependencies required to run the project.
+
+### `yarn start`
+To runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
