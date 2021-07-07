@@ -1,14 +1,19 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box } from "@material-ui/core";
-import Grid from "@material-ui/core/Grid";
-import paul from "../../Assets/paul.jpg";
+import { Box, Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
-import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
+import Title from "../Component/Title";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import { FormControl } from "@material-ui/core";
+import InputLabel from "@material-ui/core/InputLabel";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
 
 const useStyles = makeStyles((theme) => ({
   profil: {
@@ -18,20 +23,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "50%",
   },
-  media: {
-    height: 0,
-    paddingTop: "56.25%", // 16:9
-  },
-  expand: {
-    transform: "rotate(0deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: "rotate(180deg)",
-  },
   avatar: {
     backgroundColor: red[500],
   },
@@ -39,9 +30,57 @@ const useStyles = makeStyles((theme) => ({
     background: "#03989E",
   },
   profilComponent: {
-    marginTop: "5rem",
+    marginTop: "8rem",
+    marginBottom: "5rem",
     display: "flex",
     justifyContent: "center",
+    width: "100%",
+    minHeight: "35rem",
+  },
+  customBox: {
+    position: "relative",
+    background: "#03989E",
+    borderRadius: "20px",
+    boxShadow: "0px 2px 6px 7px rgba(0,0,0,0.69)",
+    width: "70%",
+  },
+  large: {
+    height: "10rem",
+    fontSize: "5rem",
+    width: "10rem",
+  },
+  avatar: {
+    position: "absolute",
+    transform: "translate(-50%, -50%)",
+    left: "50%",
+    marginBottom: "2rem",
+  },
+  informationUser: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "7rem",
+    marginBottom: "2rem",
+  },
+  infoUser: {
+    marginRight: "0.5rem",
+  },
+  cardInfo: {
+    display: "flex",
+    justifyContent: "center",
+    marginRight: "2rem",
+  },
+  card: {
+    boxShadow: "0px 2px 6px 7px rgba(0,0,0,0.49)",
+    maxWidth: 345,
+  },
+  inputProfil: {
+    background: "none",
+  },
+  inputMarginBottom:{
+    marginBottom:'1rem',
+  },
+  wrapper: {
+    marginRight: "2rem",
   },
 }));
 
@@ -49,63 +88,93 @@ export function ProfilScreen() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.profilComponent}>
-      <Card className={classes.root}>
-        <CardHeader
-          className={classes.cardHeaderProfil}
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              <img src={paul} alt={"profile picture"} />
-            </Avatar>
-          }
-          title="Paul"
-          subheader="September 14, 2016"
-        />
-
-        <CardContent>
-          <Box className={classes.profil} m={1}>
-            <Grid container spacing={1}>
-              <Grid item xs={6}>
-                <TextField id="filled-basic" label="Nom" variant="filled" />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField id="filled-basic" label="Prénom" variant="filled" />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField id="filled-basic" label="Mail" variant="filled" />
-              </Grid>
-
-              <Grid item xs={6}>
-                <TextField
-                  id="filled-basic"
-                  label="Password"
-                  variant="filled"
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField id="filled-basic" label="Avatar" variant="filled" />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField id="filled-basic" label="Brevage" variant="filled" />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  id="filled-basic"
-                  label="Entreprise"
-                  variant="filled"
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  id="filled-basic"
-                  label="Compétence"
-                  variant="filled"
-                />
-              </Grid>
-            </Grid>
+    <>
+      <Title title={"Profil"} />
+      <Box className={classes.profilComponent}>
+        <Box className={classes.customBox}>
+          <Box className={classes.avatar}>
+            <Avatar
+              alt="Remy Sharp"
+              src="/static/images/avatar/1.jpg"
+              className={classes.large}
+            />
           </Box>
-        </CardContent>
-      </Card>
-    </Box>
+          <Box className={classes.informationUser}>
+            <Box className={classes.infoUser} component="span">
+              Orion
+            </Box>
+            <Box className={classes.infoUser} component="span">
+              Sirius
+            </Box>
+          </Box>
+          <Box className={classes.cardInfo}>
+            <Box className={classes.wrapper}>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Nom</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Prénom</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+            </Box>
+            <Box>
+            <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+              <Box className={classes.inputMarginBottom}>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Name" />
+                </FormControl>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 }

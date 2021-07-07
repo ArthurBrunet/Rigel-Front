@@ -26,6 +26,8 @@ header h2 {
 }
 
 header .profile {
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 50%;
     right: 15px;
@@ -35,7 +37,10 @@ header .profile {
     background-color: white;
     border-radius: 10px;
 }
-
+.MuiPaper-root .MuiMenu-paper .MuiPopover-paper .MuiPaper-elevation8 .MuiPaper-rounded
+{
+    top:'65px'!important
+}
 html, body {
     background-color: rgb(230, 230, 230);
     margin: 0;
