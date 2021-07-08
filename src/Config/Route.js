@@ -8,6 +8,7 @@ import {IdeaBoxScreen} from "../Template/Screen/IdeaBoxScreen";
 import {LoginScreen} from "../Template/Screen/LoginScreen";
 import {RegisterScreen} from "../Template/Screen/RegisterScreen";
 import {useAuth} from "../Store/Auth/auth";
+import {NewUserScreen} from "../Template/Screen/NewUserScreen";
 
 
 const RouteConfig = () => {
@@ -29,6 +30,9 @@ const RouteConfig = () => {
                         </Route>
                         <Route exact path="/ideabox">
                             <IdeaBoxScreen/>
+                        </Route>
+                        <Route exact path="/newUser">
+                            <NewUserScreen/>
                         </Route>
                     </>
                 ) : (
