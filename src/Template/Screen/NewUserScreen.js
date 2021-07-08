@@ -8,22 +8,13 @@ import {CREATE_MESSAGE_FOR_CANAL, CREATE_USER} from "../../Config/const";
 import {Redirect} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    width: "100%",
-    height: "50rem",
-    position: "absolute",
-  },
   root: {
     padding: "20px 20px",
+    width: "80%",
+    maxWidth: "800px",
+    margin: "50px auto 0 auto",
     borderRadius: "20px",
-    width: "50rem",
-    height: "20rem",
     background: "#A0CECE",
-    flexGrow: 1,
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
     boxSizing: "content-box",
   },
   textField: {
@@ -48,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection:"column",
     justifyContent:"space-around",
     alignContent:"space-around"
+  },
+  select: {
+    padding: "10px 10px",
+    margin: "20px 0",
   },
   Center: {
     display: "flex",
@@ -87,7 +82,6 @@ const NewUserScreen = () => {
   return (
     <>
       {redirect && (<Redirect from="/newUser" to="/"/>)}
-      <div className={classes.container}>
         <div className={classes.root}>
           <form noValidate autoComplete="off">
             <Grid item xs={12}>
@@ -106,6 +100,7 @@ const NewUserScreen = () => {
                          type="email"
                   />
                   <Select
+                      className={classes.select}
                       native
                       value={state.role}
                       onChange={handleChange}
@@ -129,7 +124,6 @@ const NewUserScreen = () => {
             </Grid>
           </form>
         </div>
-      </div>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import * as c from '../Config/const';
 import axios from "axios";
-import {GET_ALL_COMPANY, GET_ALL_COMPANY_BY_TYPE} from "../Config/const";
 
 export async function getAllType(data) {
     try {

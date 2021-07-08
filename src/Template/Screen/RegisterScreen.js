@@ -5,7 +5,6 @@ import {
 } from "react-router-dom";
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import {ParticlesBackground} from './ParticlesBackground';
 import {TextField} from '@material-ui/core';
 import {Button} from '@material-ui/core';
 import {GET_USER_TOKEN, REGISTER_USER} from "../../Config/const";
@@ -38,6 +37,11 @@ const useStyles = makeStyles((theme) => ({
         color: '#743c3c',
         borderColor: 'white',
         borderRadius: '30px'
+    },
+    container: {
+        backgroundColor: 'rgb(3, 152, 158)',
+        width: '100vw',
+        height: '100vh'
     }
 }));
 
@@ -90,9 +94,8 @@ export function RegisterScreen() {
     }
 
     return (<>{authoriser && (
-        <>
+        <div className={classes.container}>
             {redirect && <Redirect from="/login" to="/" />}
-            <ParticlesBackground />
             <div className={classes.root}>
                 <form noValidate autoComplete="off">
                     {error && (
@@ -101,42 +104,42 @@ export function RegisterScreen() {
                     <Grid container spacing={3}>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="NOM"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setNom(event.target.value);
                                        }}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="PRÉNOM"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setPrenom(event.target.value);
                                        }}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="TELEPHONE" type="tel"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setTelephone(event.target.value);
                                        }}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="BOISSON FAVORITE"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setDrink(event.target.value);
                                        }}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="MOT DE PASSE" type="password"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setPassword(event.target.value);
                                        }}
                             />
                         </Grid>
                         <Grid item xs={6}>
                             <TextField className={classes.textField} id="loginformRoot" label="CONFIRMER LE MOT DE PASSE" type="password"
-                                       onClick={(event) => {
+                                       onChange={(event) => {
                                            setPasswordConfirm(event.target.value);
                                        }}
                             />
@@ -147,6 +150,6 @@ export function RegisterScreen() {
                     </Grid>
                 </form>
             </div>
-        </>
+        </div>
     )}</>);
 }

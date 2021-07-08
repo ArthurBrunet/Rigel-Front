@@ -30,9 +30,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Apero() {
-    var curr = new Date();
+    let curr = new Date();
     curr.setDate(curr.getDate());
-    var currentDate = curr.toISOString().substr(0,10);
+    let currentDate = curr.toISOString().substr(0,10);
 
     const auth = useAuth();
     const email = auth.state.user.email;
@@ -181,3 +181,12 @@ export default function Apero() {
 
     )
 }
+
+const entreprise = [
+    {title: 'example 1'},
+    {title: 'example 2'},
+    {title: 'example 3'},
+    {title: 'example 4'},
+    {title: 'example 5'},
+    {title: 'example 6'},
+]

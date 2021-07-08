@@ -4,8 +4,8 @@
     padding: 35px 30px;
     margin: 1.5em auto;
     border-radius: 25px;
-    min-width: 500px;
-    width: 30%;
+    max-width: 500px;
+    width: 100%;
 }
 
 .pageTitle h2 {
@@ -16,7 +16,7 @@
     font-weight: 700;
     letter-spacing: 0;
     text-transform: uppercase;
-    width: 150px;
+    width: 50%;
     text-align: center;
     margin: auto;
     white-space: nowrap;
