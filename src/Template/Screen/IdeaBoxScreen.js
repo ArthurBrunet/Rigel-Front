@@ -7,6 +7,9 @@ import * as c from "../../Config/const";
 import {handler} from "../../Service/IdeaService";
 import {useState} from "react";
 import {useAuth} from "../../Store/Auth/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export function IdeaBoxScreen() {
 
     let [title, setTitle] = useState(false);
@@ -29,11 +32,28 @@ export function IdeaBoxScreen() {
                     "idea": idea,
                     "user": user
                 }, options);
-
+                toast.success('Idée envoyé', {
+                    position: "bottom-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
                 return res.data;
             }
             return false;
         } catch (e) {
+            toast.error('Erreur lors de l\'envoie de l\'idée', {
+                position: "bottom-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             throw handler(e);
         }
     }
@@ -57,6 +77,7 @@ export function IdeaBoxScreen() {
                         handleSubmit().then(r => null)
                     }}>Envoyer votre idée</Button>
                 </form>
+                <ToastContainer />
             </div>
             <Apero/>
         </>
