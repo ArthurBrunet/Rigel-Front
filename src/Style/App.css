@@ -4,24 +4,24 @@
 
 body::-webkit-scrollbar {
     width: 20px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(3, 152, 158); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(3, 152, 158);
     border-radius: 0 0 10px 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #03899e; 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #03899e;
+}
 
 * {
     font-family: "Open Sans", Sans-serif, serif;
@@ -58,10 +58,11 @@ header .profile {
     background-color: white;
     border-radius: 10px;
 }
-.MuiPaper-root .MuiMenu-paper .MuiPopover-paper .MuiPaper-elevation8 .MuiPaper-rounded
-{
-    top:'65px'!important
+
+.MuiPaper-root .MuiMenu-paper .MuiPopover-paper .MuiPaper-elevation8 .MuiPaper-rounded {
+    top: '65px' !important
 }
+
 html, body {
     background-color: rgb(230, 230, 230);
     margin: 0;
@@ -131,7 +132,8 @@ li a:hover {
 }
 
 .homeBox p {
-   line-height: 25px;
+    line-height: 25px;
+    margin: 5%;
 }
 
 .homeBox p span {
@@ -162,17 +164,17 @@ li a:hover {
 }
 
 .input {
-    width:80%!important;
-    text-align:center!important;
-    margin:2vh auto!important;
-    margin-bottom: 5vh!important;
-} 
+    width: 80% !important;
+    text-align: center !important;
+    margin: 2vh auto !important;
+    margin-bottom: 5vh !important;
+}
 
 .halfInput {
-    width:40%!important;
-    text-align:center!important;
-    margin:2vh 0 2vh 10%!important;
-    margin-bottom: 5vh!important;
+    width: 40% !important;
+    text-align: center !important;
+    margin: 2vh 0 2vh 10% !important;
+    margin-bottom: 5vh !important;
 }
 
 .list {
@@ -320,4 +322,104 @@ and (max-width: 500px) {
     left: 50%; /* à 50%/50% du parent référent */
     transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     box-sizing: content-box;
+}
+
+
+/* card article */
+.card {
+    flex-grow: 3;
+    width: 400px;
+    /*margin: 0 auto;*/
+    margin-left: 5%;
+    background-color: white;
+    box-shadow: 0 5px 20px #555;
+    border-radius: 10px;
+    padding-top: -10px;
+}
+
+.card a {
+    color: #333;
+    text-decoration: none;
+}
+
+.card:hover .card-image img {
+    width: 110%;
+    filter: grayscale(0);
+}
+
+.card-image {
+
+    height: 250px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    filter: grayscale(1);
+
+    transition-property: width;
+    transition-duration: .3s;
+}
+.card-body {
+    text-align:center;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+
+.card-date {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.card-title, .card-exceprt {
+    font-family: 'Playfair Display', serif;
+}
+
+.card-date, .card-title {
+    text-align:center;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.card-date, .card-excerpt {
+    color: #777;
+}
+
+.cardArticle {
+    display: flex;
+    justify-content: center;
+}
+
+.bodyHome {
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.boxText {
+    flex-grow: 1;
+}
+
+.boxText p{
+    flex-grow: 1;
+    text-align: justify;
+}
+
+.boxImg {
+    flex-grow: 2;
+}
+
+.boxImg img{
+    width: 100%;
+    min-width: 300px;
+    flex-grow: 3;
+    border-radius: 10px;
 }

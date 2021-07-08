@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: "50%",
   },
-  avatar: {
-    backgroundColor: red[500],
-  },
   cardHeaderProfil: {
     background: "#03989E",
   },
@@ -43,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     width: "10rem",
   },
   avatar: {
+    backgroundColor: red[500],
     position: "absolute",
     transform: "translate(-50%, -50%)",
     left: "50%",

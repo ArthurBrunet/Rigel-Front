@@ -50,29 +50,35 @@ export function ChatScreen() {
   const [canals,setCanals] = useState([]);
   const [text,setText] = useState('');
   useEffect(()=>{
-    user.canals.forEach((Usercanal) => {
-      axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((result)=>{
-        setCanals([...canals, {
-          canal:Usercanal.name,
-          messages:result.data
-        }]);
-      }).catch((e)=>{
-        console.log(e)
-      })
-    });
+    console.log(user.canals);
     let interval = setInterval(()=>{
       user.canals.forEach((Usercanal) => {
-        axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((result)=>{
-          // si 2 canaux dispo BUG 100%
-          setCanals([...canals, {
-            canal:Usercanal.name,
-            messages:result.data
-          }]);
+        axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((resultData)=>{
+          let result;
+          if(canals.length !== 0) {
+            result = canals.map((canal) => {
+              console.log(Usercanal.name);
+              if(canal.canal === Usercanal.name) {
+                canal = {
+                  canal:Usercanal.name,
+                  messages:resultData.data
+                }
+              }
+              return canal;
+            });
+          }else{
+            result = [...canals, {
+              canal:Usercanal.name,
+              messages:resultData.data
+            }];
+          }
+          setCanals(result);
         }).catch((e)=>{
           console.log(e)
-        })
+        });
       });
     },1000);
+
     return () => {
       clearInterval(interval);
     };
@@ -103,23 +109,25 @@ export function ChatScreen() {
         });
       }
       return(
-          <Box fixed className={classes.chat} width="65%" position="relative">
-            <Box className={classes.messageChat} padding="10px 10px">
-              {listMessages}
-            </Box>
-            <Box boxSizing="border-box">
-              <TextareaAutosize
-                  className={classes.textArea}
-                  aria-label="minimum height"
-                  rowsMin={3}
-                  value={text}
-                  onChange={(result)=>{setText(result.target.value)}}
-              />
-            </Box>
-            <Box className={classes.iconTextArea}>
-              <ArrowRightIcon className={classes.customIcon} onClick={() => {
-                createMessage(c.canal)
-              }}/>
+          <Box display="flex" flexDirection="raw" justifyContent="space-between">
+            <Box fixed className={classes.chat} width="65%" position="relative">
+              <Box className={classes.messageChat} padding="10px 10px">
+                {listMessages}
+              </Box>
+              <Box boxSizing="border-box">
+                <TextareaAutosize
+                    className={classes.textArea}
+                    aria-label="minimum height"
+                    rowsMin={3}
+                    value={text}
+                    onChange={(result)=>{setText(result.target.value)}}
+                />
+              </Box>
+              <Box className={classes.iconTextArea}>
+                <ArrowRightIcon className={classes.customIcon} onClick={() => {
+                  createMessage(c.canal)
+                }}/>
+              </Box>
             </Box>
           </Box>
       )
@@ -128,9 +136,7 @@ export function ChatScreen() {
   return (
       <>
         <Title title={"Chats"} />
-        <Box display="flex" flexDirection="raw" justifyContent="space-between">
-          {listCanal}
-        </Box>
+        {listCanal}
       </>
   );
 }

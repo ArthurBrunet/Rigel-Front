@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import React, { useState } from "react";
 import { Box, IconButton } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
@@ -13,6 +13,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import SendIcon from "@material-ui/icons/Send";
+import {useAuth} from "../../Store/Auth/auth";
 
 export function Header() {
   const useStyles = makeStyles((theme) => ({
@@ -20,16 +21,24 @@ export function Header() {
       backgroundColor: "red",
     },
   }));
-
+  let auth = useAuth();
+  let role = auth.state.user.roles[0];
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
+  const handleLogout = () => {
+        auth.handleLogout().then(r => null);
+        handleClose();
+        return <Redirect to="/"/>;
+  }
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
   const history = useHistory();
 
   const handleRoute = () => {
@@ -53,7 +62,11 @@ export function Header() {
         horizontal: "center",
       }}
       {...props}
-    />
+    >
+      <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
+      <MenuItem onClick={handleClose}>My account</MenuItem><br/>
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
+    <Menu/>
   ));
 
   const StyledMenuItem = withStyles((theme) => ({
@@ -66,7 +79,6 @@ export function Header() {
       },
     },
   }))(MenuItem);
-
  return (
     <>
       <header>
@@ -121,6 +133,11 @@ export function Header() {
           <li>
             <Link to="/ideabox">Boîte à idées</Link>
           </li>
+          {role === "ROLE_ADMIN" && (
+              <li>
+                <Link to="/newUser">Creation utilisateur</Link>
+              </li>
+          )}
         </ul>
       </nav>
     </>
