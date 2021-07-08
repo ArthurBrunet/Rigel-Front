@@ -13,4 +13,6 @@ export const GET_MESSAGE_FOR_CANAL = (id) => {
     return BASE_URL+"/api/message/get/"+id;
 }
 
-export const CREATE_MESSAGE_FOR_CANAL = BASE_URL+"/api/message/create"
+export const CREATE_MESSAGE_FOR_CANAL = BASE_URL+"/api/message/create";
+
+export const CREATE_USER = BASE_URL+"/mail/createUser";

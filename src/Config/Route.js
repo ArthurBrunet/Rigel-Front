@@ -8,7 +8,7 @@ import {IdeaBoxScreen} from "../Template/Screen/IdeaBoxScreen";
 import {LoginScreen} from "../Template/Screen/LoginScreen";
 import {RegisterScreen} from "../Template/Screen/RegisterScreen";
 import {useAuth} from "../Store/Auth/auth";
-import {NewUserScreen} from "../Template/Screen/NewUserScreen";
+import NewUserScreen from "../Template/Screen/NewUserScreen";
 
 
 const RouteConfig = () => {
