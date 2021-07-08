@@ -7,12 +7,8 @@ import Avatar from "@material-ui/core/Avatar";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import DraftsIcon from "@material-ui/icons/Drafts";
-import SendIcon from "@material-ui/icons/Send";
 import {useAuth} from "../../Store/Auth/auth";
 
 export function Header() {
