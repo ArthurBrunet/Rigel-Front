@@ -1,8 +1,7 @@
-import React, {useState} from "react";
-import {BrowserRouter as Router, Switch} from "react-router-dom";
+import React from "react";
 import "./Style/Normalize.css";
 import "./Style/App.css";
-import {AuthProvider, useAuth} from "./Store/Auth/auth"
+import {AuthProvider} from "./Store/Auth/auth"
 import store from './Store/configStore';
 import {Provider} from 'react-redux';
 import RouteConfig from './Config/Route';
