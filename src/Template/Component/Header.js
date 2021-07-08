@@ -28,17 +28,17 @@ export function Header() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  
+
   const handleLogout = () => {
         auth.handleLogout().then(r => null);
         handleClose();
         return <Redirect to="/"/>;
   }
-  
+
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   const history = useHistory();
 
   const handleRoute = () => {
@@ -66,7 +66,7 @@ export function Header() {
       <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
       <MenuItem onClick={handleClose}>My account</MenuItem><br/>
       <MenuItem onClick={handleLogout}>Logout</MenuItem>
-    <Menu/>
+    </Menu>
   ));
 
   const StyledMenuItem = withStyles((theme) => ({
