@@ -103,34 +103,27 @@ export function ChatScreen() {
   const [canals,setCanals] = useState([]);
   const [text,setText] = useState('');
   useEffect(()=>{
-    console.log(user.canals);
+
     let interval = setInterval(()=>{
-      user.canals.forEach((Usercanal) => {
-        axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((resultData)=>{
-          let result;
-          if(canals.length !== 0) {
-            result = canals.map((canal) => {
-              console.log(Usercanal.name);
-              if(canal.canal === Usercanal.name) {
-                canal = {
-                  canal:Usercanal.name,
-                  messages:resultData.data
-                }
-              }
-              return canal;
-            });
-          }else{
-            result = [...canals, {
+        let canalTemp = [];
+        let i = 0;
+        user.canals.forEach((Usercanal) => {
+          axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((resultData)=>{
+            i++;
+            let result = {
               canal:Usercanal.name,
               messages:resultData.data
-            }];
-          }
-          setCanals(result);
-        }).catch((e)=>{
-          console.log(e)
+            }
+            canalTemp.push(result);
+            if (user.canals.length === i){
+              setCanals(canalTemp);
+            }
+          }).catch((e)=>{
+            console.log(e)
+          });
         });
-      });
-    },1000);
+      },1000);
+
 
     return () => {
       clearInterval(interval);
@@ -190,11 +183,11 @@ export function ChatScreen() {
       );
     });
   }
-  
+
   return (
     <>
       <Box display="flex" justifyContent="center" marginBottom="5rem" marginTop="2rem"  >
-        
+
         <Button
           aria-controls="customized-menu"
           aria-haspopup="true"
@@ -219,7 +212,7 @@ export function ChatScreen() {
           </StyledMenuItem>
         </StyledMenu>
       </Box>
-     
+
       <Box display="flex" justifyContent="center">
         <Box width="90%">{listCanal}</Box>
       </Box>

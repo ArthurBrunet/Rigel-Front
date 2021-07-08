@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { IconButton } from '@material-ui/core';
 import LocalBarIcon from '@material-ui/icons/LocalBar';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +8,10 @@ import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import Button from '@material-ui/core/Button';
+import {getAllCompany} from "../../Service/DirectoryService";
+import {useAuth} from "../../Store/Auth/auth";
+import axios from "axios";
+import {CREATE_APERITIF} from "../../Config/const";
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -30,16 +34,51 @@ export default function Apero() {
     curr.setDate(curr.getDate());
     let currentDate = curr.toISOString().substr(0,10);
 
+    const auth = useAuth();
+    const email = auth.state.user.email;
+    const [allCompany,setAllCompagny] = useState();
+    const [companySelected,setCompanySelected] = useState();
+    const [date,setDate] = useState();
+    const [heure,setHeure] = useState();
+    const [motif,setMotif] = useState();
+    const [titre,setTitre] = useState();
+    const [localisation,setLocalisation] = useState();
+
+    useEffect(async ()=>{
+        let compagny = await getAllCompany();
+        let test = compagny.map((item)=> {
+            return {
+                id : item.id,
+                title : item.name
+            }
+        });
+        setAllCompagny(test);
+    },[]);
+
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-  
+
     const handleOpen = () => {
       setOpen(true);
     };
-  
+
     const handleClose = () => {
       setOpen(false);
     };
+
+    const submit = () => {
+        let finalDate = date + " " + heure+":00";
+        axios.post(CREATE_APERITIF,{
+            email: email,
+            date: finalDate,
+            emergency: titre,
+            meetingPoint: localisation,
+            reason: motif,
+            companie: companySelected.id,
+        }).then((data) => {
+            handleClose();
+        }).catch()
+    }
 
     return (
         <div className={'apero-div'}>
@@ -62,21 +101,43 @@ export default function Apero() {
         <Fade in={open}>
           <div className={classes.paper}>
                 <form className={'aperoForm'} noValidate autoComplete="off">
-                    <TextField 
-                        className="halfInput" 
+                    <TextField
+                        className="input"
+                        id="TITRE"
+                        label="TITRE"
+                        onChange={(event) => {
+                            setTitre(event.target.value)
+                        }}
+                    />
+                    <TextField
+                        className="input"
+                        id="LOCALISATION"
+                        label="LOCALISATION"
+                        onChange={(event) => {
+                            setLocalisation(event.target.value)
+                        }}
+                    />
+                    <TextField
+                        className="halfInput"
                         label="CHOISISSEZ UNE DATE"
                         id="date"
                         type="date"
                         defaultValue={currentDate}
+                        onChange={(event) => {
+                            setDate(event.target.value)
+                        }}
                         InputLabelProps={{
                         shrink: true,
                     }}/>
-                    <TextField 
-                        className="halfInput" 
+                    <TextField
+                        className="halfInput"
                         label="CHOISISSEZ UNE HEURE"
                         id="time"
                         type="time"
                         defaultValue="19:30"
+                        onChange={(event) => {
+                            setHeure(event.target.value)
+                        }}
                         InputLabelProps={{
                           shrink: true,
                         }}
@@ -87,30 +148,40 @@ export default function Apero() {
 
                     <Autocomplete
                         className={'input'}
-                        multiple
                         id="multiple-limit-tags"
-                        options={entreprise}
+                        options={allCompany}
                         getOptionLabel={(option) => option.title}
                         renderInput={(params) => (
                             <TextField {...params} label="ENTREPRISE"/>
                         )}
+                        value={companySelected}
+                        onChange={(event, newValue) => {
+                            setCompanySelected(newValue);
+                        }}
                     />
 
-                    <TextField 
-                        className="input" 
-                        id="MOTIF" 
+                    <TextField
+                        className="input"
+                        id="MOTIF"
                         label="MOTIF"
+                        onChange={(event) => {
+                            setMotif(event.target.value)
+                        }}
                     /><br/>
-                    <Button className="ideaButton">Envoyer une invitation !</Button>
+                    <Button
+                        className="ideaButton"
+                        onClick={() => {submit()}}
+                    >Envoyer une invitation !</Button>
                 </form>
             </div>
         </Fade>
       </Modal>
         </div>
 
-        
+
     )
 }
+
 const entreprise = [
     {title: 'example 1'},
     {title: 'example 2'},
