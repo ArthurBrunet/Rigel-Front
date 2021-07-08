@@ -7,7 +7,6 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import Title from "../Component/Title";
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function Apero() {
-    var curr = new Date();
+    let curr = new Date();
     curr.setDate(curr.getDate());
-    var currentDate = curr.toISOString().substr(0,10);
+    let currentDate = curr.toISOString().substr(0,10);
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
