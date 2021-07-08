@@ -6,7 +6,7 @@ export const LOGIN = BASE_URL+"/api/login_check";
 
 export const IDEA_CREATE = BASE_URL+"/api/idea/create";
 
-export const GETALL_POST = BASE_URL+"/posts";
+export const GET_ALL_POST = BASE_URL+"/posts";
 
 export const GET_ALL_COMPANY_TYPE = BASE_URL+"/api/typeCompany/get";
 
