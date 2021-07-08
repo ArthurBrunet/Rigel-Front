@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import React, { useState } from "react";
 import { Box, IconButton } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
@@ -28,10 +28,17 @@ export function Header() {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
+  const handleLogout = () => {
+        auth.handleLogout().then(r => null);
+        handleClose();
+        return <Redirect to="/"/>;
+  }
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
+  
   const history = useHistory();
 
   const handleRoute = () => {
@@ -55,7 +62,11 @@ export function Header() {
         horizontal: "center",
       }}
       {...props}
-    />
+    >
+      <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
+      <MenuItem onClick={handleClose}>My account</MenuItem><br/>
+      <MenuItem onClick={handleLogout}>Logout</MenuItem>
+    <Menu/>
   ));
 
   const StyledMenuItem = withStyles((theme) => ({
