@@ -1,16 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Grid } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import { Box } from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import { red } from "@material-ui/core/colors";
 import Title from "../Component/Title";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
 import { FormControl } from "@material-ui/core";
 import InputLabel from "@material-ui/core/InputLabel";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
@@ -42,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#03989E",
     borderRadius: "20px",
     boxShadow: "0px 2px 6px 7px rgba(0,0,0,0.69)",
-    width: "70%",
+    width: "50%",
   },
   large: {
     height: "10rem",
@@ -76,8 +69,8 @@ const useStyles = makeStyles((theme) => ({
   inputProfil: {
     background: "none",
   },
-  inputMarginBottom:{
-    marginBottom:'1rem',
+  inputMarginBottom: {
+    marginBottom: "1rem",
   },
   wrapper: {
     marginRight: "2rem",
@@ -123,52 +116,30 @@ export function ProfilScreen() {
               </Box>
               <Box className={classes.inputMarginBottom}>
                 <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
-                </FormControl>
-              </Box>
-              <Box className={classes.inputMarginBottom}>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
-                </FormControl>
-              </Box>
-              <Box className={classes.inputMarginBottom}>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
+                  <InputLabel htmlFor="component-outlined">Brevage</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Brevage" />
                 </FormControl>
               </Box>
             </Box>
             <Box>
-            <Box className={classes.inputMarginBottom}>
+              <Box className={classes.inputMarginBottom}>
                 <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
+                  <InputLabel htmlFor="component-outlined">Email</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Email" />
                 </FormControl>
               </Box>
               <Box className={classes.inputMarginBottom}>
                 <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
+                  <InputLabel htmlFor="component-outlined">Rôle</InputLabel>
+                  <OutlinedInput id="component-outlined" label="Rôle" />
                 </FormControl>
               </Box>
               <Box className={classes.inputMarginBottom}>
                 <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
-                </FormControl>
-              </Box>
-              <Box className={classes.inputMarginBottom}>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
-                </FormControl>
-              </Box>
-              <Box className={classes.inputMarginBottom}>
-                <FormControl variant="outlined">
-                  <InputLabel htmlFor="component-outlined">Name</InputLabel>
-                  <OutlinedInput id="component-outlined" label="Name" />
+                  <InputLabel htmlFor="component-outlined">
+                    Entreprise
+                  </InputLabel>
+                  <OutlinedInput id="component-outlined" label="Entreprise" />
                 </FormControl>
               </Box>
             </Box>
