@@ -67,7 +67,7 @@ export function Header() {
     },
   }))(MenuItem);
 
-  /*  */ return (
+ return (
     <>
       <header>
         <h2>Sirius</h2>
