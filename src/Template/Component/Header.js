@@ -1,5 +1,5 @@
 import {
-    Link
+    Link, Redirect
 } from "react-router-dom";
 import React, {useState} from 'react'
 import { IconButton } from '@material-ui/core';
@@ -8,8 +8,10 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Avatar from '@material-ui/core/Avatar';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import paul from '../../Assets/paul.jpg';
+import {useAuth} from "../../Store/Auth/auth";
 
 export function Header() {
+    const auth = useAuth();
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClick = (event) => {
@@ -19,6 +21,12 @@ export function Header() {
     const handleClose = () => {
       setAnchorEl(null);
     };
+
+    const handleLogout = () => {
+        auth.handleLogout().then(r => null);
+        handleClose();
+        return <Redirect to="/"/>;
+    }
 
     return (
         <>
@@ -40,7 +48,7 @@ export function Header() {
                     >
                       <MenuItem onClick={handleClose}>Profile</MenuItem><br/>
                       <MenuItem onClick={handleClose}>My account</MenuItem><br/>
-                      <MenuItem onClick={handleClose}>Logout</MenuItem>
+                      <MenuItem onClick={handleLogout}>Logout</MenuItem>
                     </Menu>
                 </div>
             </header>
