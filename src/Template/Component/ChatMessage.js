@@ -19,9 +19,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const ChatMessage = ({ ...props }) => {
+export const ChatMessage = ({info}) => {
   const classes = useStyles();
-
+  let name = info.name != null ? info.name : '';
+  let firstname = info.firstname != null ? info.firstname : '';
+  let fullName = firstname + ' ' + name;
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -30,13 +32,12 @@ export const ChatMessage = ({ ...props }) => {
             R
           </Avatar>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={fullName}
+        subheader={info.createdAt.date.substring(0,info.createdAt.date.length-10)}
       />
       <CardContent>
         <Typography paragraph>
-          Heat 1/2 cup of the broth in a pot until simmering, add saffron and
-          set aside for 10 minutes.
+            {info.text}
         </Typography>
       </CardContent>
     </Card>

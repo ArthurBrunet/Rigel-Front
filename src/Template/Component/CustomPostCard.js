@@ -14,7 +14,7 @@ export default function CustomPostCard() {
               </p>
           </div>
           <div className={'cardContent'}>
-              <img src={paul} alt={'profile picture'}/>
+              <img className={'cardImg'} src={paul} alt={'profile picture'}/>
               <p>
                   lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
                   ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem
