@@ -114,6 +114,8 @@ li a:hover {
 .apero {
     background-color: rgba(3, 152, 158, 1) !important;
     color: white !important;
+    width: 75px;
+    height: 75px;
 }
 
 .homeBox {
@@ -148,7 +150,8 @@ li a:hover {
 }
 
 .ideaForm {
-    width: 50%;
+    width: 80%;
+    max-width: 800px;
     text-align: center;
     margin: 50px auto;
     background-color: white;
@@ -192,10 +195,10 @@ li a:hover {
 }
 
 .cards {
-    width: 90vw;
     margin: 0 auto;
     align-items: center;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -397,6 +400,7 @@ and (max-width: 500px) {
 }
 
 .cardArticle {
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
 }
