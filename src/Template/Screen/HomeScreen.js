@@ -11,10 +11,8 @@ export function HomeScreen() {
     useEffect(async () => {
         try {
             let allPost = await getAllPost();
-            allPost = allPost.concat(allPost).concat(allPost);
             let lastThreePost = allPost.slice(0, 3)
             setPostList(lastThreePost);
-            console.log(lastThreePost);
         } catch (e) {
             console.error(e);
         }
