@@ -320,3 +320,8 @@ and (max-width: 500px) {
     transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
     box-sizing: content-box;
 }
+
+.chat{
+    height: 100%;
+    background-color: red;
+}
