@@ -8,11 +8,11 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { useHistory } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
-import { withStyles } from '@material-ui/core/styles';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
+import { withStyles } from "@material-ui/core/styles";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import DraftsIcon from "@material-ui/icons/Drafts";
+import SendIcon from "@material-ui/icons/Send";
 
 export function Header() {
   const useStyles = makeStyles((theme) => ({
@@ -38,19 +38,19 @@ export function Header() {
 
   const StyledMenu = withStyles({
     paper: {
-      border: '1px solid #d3d4d5',
+      border: "1px solid #d3d4d5",
     },
   })((props) => (
     <Menu
       elevation={0}
       getContentAnchorEl={null}
       anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center',
+        vertical: "bottom",
+        horizontal: "center",
       }}
       transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center',
+        vertical: "top",
+        horizontal: "center",
       }}
       {...props}
     />
@@ -58,16 +58,16 @@ export function Header() {
 
   const StyledMenuItem = withStyles((theme) => ({
     root: {
-      '&:focus': {
-        backgroundColor: theme.palette.primary.main,
-        '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+      "&:focus": {
+        backgroundColor: "#03989E",
+        "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
           color: theme.palette.common.white,
         },
       },
     },
   }))(MenuItem);
 
-/*  */  return (
+  /*  */ return (
     <>
       <header>
         <h2>Sirius</h2>
@@ -75,42 +75,36 @@ export function Header() {
           <Box>
             <Avatar />
           </Box>
-         
-            <div>
-              <Button
-                aria-controls="customized-menu"
-                aria-haspopup="true"
-                variant="contained"
-                color="primary"
-                onClick={handleClick}
-              >
-                <KeyboardArrowDownIcon />
-              </Button>
-              <StyledMenu
-                id="customized-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <StyledMenuItem>
-                  <ListItemIcon>
-                    <SendIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText primary="Profile" />
-                </StyledMenuItem>
-                <StyledMenuItem>
-                  <ListItemIcon>
-                    <DraftsIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText primary="Logout" />
-                </StyledMenuItem>
-              </StyledMenu>
-            </div>
-           
-         
 
-        
+          <div>
+            <IconButton
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              <KeyboardArrowDownIcon />
+            </IconButton>
+
+            <StyledMenu
+              id="customized-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <StyledMenuItem>
+                <ListItemText
+                  onClick={() => {
+                    history.push("/profil");
+                  }}
+                  primary="Profile"
+                />
+              </StyledMenuItem>
+              <StyledMenuItem>
+                <ListItemText primary="Logout" />
+              </StyledMenuItem>
+            </StyledMenu>
+          </div>
         </div>
       </header>
       <nav>
