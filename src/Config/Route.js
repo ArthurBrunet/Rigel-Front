@@ -40,7 +40,7 @@ const RouteConfig = () => {
                         <Route exact path="/">
                             <LoginScreen/>
                         </Route>
-                        <Route exact path="/register">
+                        <Route exact path="/register/:token" >
                             <RegisterScreen/>
                         </Route>
                     </>
