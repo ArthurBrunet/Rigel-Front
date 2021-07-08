@@ -100,44 +100,38 @@ export function ChatScreen() {
   const classes = useStyles();
   const auth = useAuth();
   const user = auth.state.user;
-  const [canals, setCanals] = useState([]);
-  const [text, setText] = useState("");
-  useEffect(() => {
-    user.canals.forEach((Usercanal) => {
-      axios
-        .get(GET_MESSAGE_FOR_CANAL(Usercanal.id))
-        .then((result) => {
-          setCanals([
-            ...canals,
-            {
-              canal: Usercanal.name,
-              messages: result.data,
-            },
-          ]);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    });
-    let interval = setInterval(() => {
+  const [canals,setCanals] = useState([]);
+  const [text,setText] = useState('');
+  useEffect(()=>{
+    console.log(user.canals);
+    let interval = setInterval(()=>{
       user.canals.forEach((Usercanal) => {
-        axios
-          .get(GET_MESSAGE_FOR_CANAL(Usercanal.id))
-          .then((result) => {
-            // si 2 canaux dispo BUG 100%
-            setCanals([
-              ...canals,
-              {
-                canal: Usercanal.name,
-                messages: result.data,
-              },
-            ]);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
+        axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((resultData)=>{
+          let result;
+          if(canals.length !== 0) {
+            result = canals.map((canal) => {
+              console.log(Usercanal.name);
+              if(canal.canal === Usercanal.name) {
+                canal = {
+                  canal:Usercanal.name,
+                  messages:resultData.data
+                }
+              }
+              return canal;
+            });
+          }else{
+            result = [...canals, {
+              canal:Usercanal.name,
+              messages:resultData.data
+            }];
+          }
+          setCanals(result);
+        }).catch((e)=>{
+          console.log(e)
+        });
       });
-    }, 1000);
+    },1000);
+
     return () => {
       clearInterval(interval);
     };
