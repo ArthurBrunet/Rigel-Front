@@ -107,20 +107,16 @@ export function ChatScreen() {
     let interval = setInterval(()=>{
         let canalTemp = [];
         let i = 0;
-        user.canals.forEach((Usercanal) => {
-          axios.get(GET_MESSAGE_FOR_CANAL(Usercanal.id)).then((resultData)=>{
-            i++;
-            let result = {
-              canal:Usercanal.name,
-              messages:resultData.data
-            }
-            canalTemp.push(result);
-            if (user.canals.length === i){
-              setCanals(canalTemp);
-            }
-          }).catch((e)=>{
-            console.log(e)
-          });
+        axios.get(GET_MESSAGE_FOR_CANAL(user.canals[0].id)).then((resultData)=>{
+          i++;
+          let result = {
+            canal:user.canals[0].name,
+            messages:resultData.data
+          }
+          canalTemp.push(result);
+          setCanals(canalTemp);
+        }).catch((e)=>{
+          console.log(e)
         });
       },1000);
 
@@ -148,7 +144,7 @@ export function ChatScreen() {
   };
   let listCanal;
   if (canals.length > 0) {
-    listCanal = canals.map((c) => {
+    listCanal = canals.map((c,index) => {
       let listMessages;
       if (c.messages.length > 0) {
         listMessages = c.messages.map((data) => {
@@ -156,30 +152,30 @@ export function ChatScreen() {
         });
       }
       return (
-        <Box fixed className={classes.chat} width="100%" position="relative">
-          <Box className={classes.messageChat} padding="10px 10px">
-            {listMessages}
+          <Box fixed className={classes.chat} width="100%" position="relative">
+            <Box className={classes.messageChat} padding="10px 10px">
+              {listMessages}
+            </Box>
+            <Box boxSizing="border-box">
+              <TextareaAutosize
+                  className={classes.textArea}
+                  aria-label="minimum height"
+                  rowsMin={6}
+                  value={text}
+                  onChange={(result) => {
+                    setText(result.target.value);
+                  }}
+              />
+            </Box>
+            <Box className={classes.iconTextArea}>
+              <ArrowRightIcon
+                  className={classes.customIcon}
+                  onClick={() => {
+                    createMessage(c.canal);
+                  }}
+              />
+            </Box>
           </Box>
-          <Box boxSizing="border-box">
-            <TextareaAutosize
-              className={classes.textArea}
-              aria-label="minimum height"
-              rowsMin={6}
-              value={text}
-              onChange={(result) => {
-                setText(result.target.value);
-              }}
-            />
-          </Box>
-          <Box className={classes.iconTextArea}>
-            <ArrowRightIcon
-              className={classes.customIcon}
-              onClick={() => {
-                createMessage(c.canal);
-              }}
-            />
-          </Box>
-        </Box>
       );
     });
   }
